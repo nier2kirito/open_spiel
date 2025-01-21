@@ -123,7 +123,7 @@ else:
   req_file = "../requirements.txt"
 
 setuptools.setup(
-    name="open-spiel",
+    name="open_spiel",
     version="1.5",
     license="Apache 2.0",
     author="The OpenSpiel authors",
