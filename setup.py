@@ -123,7 +123,7 @@ else:
   req_file = "../requirements.txt"
 
 setuptools.setup(
-    name="open_spiel",
+    name="open-spiel",
     version="1.5",
     license="Apache 2.0",
     author="The OpenSpiel authors",
@@ -137,4 +137,4 @@ setuptools.setup(
     ext_modules=[CMakeExtension("pyspiel", sourcedir="open_spiel")],
     cmdclass={"build_ext": BuildExt},
     zip_safe=False,
-    packages=setuptools.find_packages(include=["open_spiel", "open_spiel.*"]))
+    packages=setuptools.find_packages(include=["open_spiel", "open_spiel.*", "open_spiel.python.*"]),)

@@ -77,8 +77,8 @@ _GAME_TYPE = pyspiel.GameType(
     short_name="kick_off",
     long_name="Kick Off",
     dynamics=pyspiel.GameType.Dynamics.SEQUENTIAL,
-    chance_mode=pyspiel.GameType.ChanceMode.EXPLICIT_STOCHASTIC,
-    information=pyspiel.GameType.Information.IMPERFECT_INFORMATION,
+    chance_mode=pyspiel.GameType.ChanceMode.DETERMINISTIC,
+    information=pyspiel.GameType.Information.PERFECT_INFORMATION,
     utility=pyspiel.GameType.Utility.ZERO_SUM,
     reward_model=pyspiel.GameType.RewardModel.TERMINAL,
     max_num_players=_NUM_PLAYERS,
@@ -99,7 +99,7 @@ _GAME_INFO = pyspiel.GameInfo(num_distinct_actions=len(Action),
 
 
 class KickOffGame(pyspiel.Game):
-    """A Python version of Kuhn poker."""
+    """A Python version of KickOff poker."""
 
     def __init__(self, params=None):
         super().__init__(_GAME_TYPE, _GAME_INFO, params or dict())
@@ -116,7 +116,7 @@ class KickOffGame(pyspiel.Game):
 
 
 class KickOffState(pyspiel.State):
-    """A python version of the Kuhn poker state."""
+    """A python version of the kick off poker state."""
 
     def __init__(self, game):
         """Constructor; should only be called by Game.new_initial_state."""

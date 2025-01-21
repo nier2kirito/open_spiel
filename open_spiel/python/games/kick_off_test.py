@@ -30,7 +30,7 @@ class KickOffTest(absltest.TestCase):
 
     def test_game_from_cc(self):
         """Runs standard game tests, checking API consistency."""
-        game = pyspiel.load_game("python_kick_off")
+        game = pyspiel.load_game("kick_off")
         pyspiel.random_sim_test(game,
                                 num_sims=10,
                                 serialize=False,
@@ -38,7 +38,7 @@ class KickOffTest(absltest.TestCase):
 
     def test_consistent(self):
         """Checks the Python and C++ game implementations are the same."""
-        py_game = pyspiel.load_game("python_kick_off")
+        py_game = pyspiel.load_game("kick_off")
         cc_game = pyspiel.load_game(
             "kick_off")  # Ensure a corresponding C++ implementation exists.
         obs_types = [None, pyspiel.IIGObservationType(perfect_recall=True)]
@@ -62,7 +62,7 @@ class KickOffTest(absltest.TestCase):
 
     def test_nash_value_sequence_form_lp(self):
         """Checks Nash value using a Python sequence form LP solver."""
-        game = pyspiel.load_game("python_kick_off")
+        game = pyspiel.load_game("kick_off")
         val1, val2, _, _ = sequence_form_lp.solve_zero_sum_game(game)
         # You may need to derive or calculate the expected Nash equilibrium values for your game.
         expected_val1 = -0.05  # Example value, adjust accordingly.
@@ -72,7 +72,7 @@ class KickOffTest(absltest.TestCase):
 
     def test_exploitability_uniform_random_py(self):
         """Checks the exploitability of the uniform random policy using Python."""
-        game = pyspiel.load_game("python_kick_off")
+        game = pyspiel.load_game("kick_off")
         test_policy = policy.UniformRandomPolicy(game)
         # Derive the expected NashConv for your game.
         expected_nash_conv = 1.2  # Example value, adjust accordingly.
@@ -82,7 +82,7 @@ class KickOffTest(absltest.TestCase):
 
     def test_exploitability_uniform_random_cc(self):
         """Checks the exploitability of the uniform random policy using C++."""
-        game = pyspiel.load_game("python_kick_off")
+        game = pyspiel.load_game("kick_off")
         test_policy = pyspiel.UniformRandomPolicy(game)
         # Derive the expected NashConv for your game.
         expected_nash_conv = 1.2  # Example value, adjust accordingly.
@@ -91,7 +91,7 @@ class KickOffTest(absltest.TestCase):
 
     def test_cfr_cc(self):
         """Runs a C++ CFR algorithm on the game."""
-        game = pyspiel.load_game("python_kick_off")
+        game = pyspiel.load_game("kick_off")
         unused_results = pyspiel.CFRSolver(game)
 
 
