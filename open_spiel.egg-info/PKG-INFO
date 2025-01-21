@@ -2,7 +2,7 @@ Metadata-Version: 2.2
 Name: open_spiel
 Version: 1.5
 Summary: A Framework for Reinforcement Learning in Games
-Home-page: https://github.com/deepmind/open_spiel
+Home-page: https://github.com/nier2kirito/open_spiel
 Author: The OpenSpiel authors
 Author-email: open_spiel@google.com
 License: Apache 2.0

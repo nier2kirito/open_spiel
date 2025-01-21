@@ -74,8 +74,8 @@ _DECK = frozenset(
 )
 
 _GAME_TYPE = pyspiel.GameType(
-    short_name="python_kuhn_poker",
-    long_name="Python Kuhn Poker",
+    short_name="kick_off",
+    long_name="Kick Off",
     dynamics=pyspiel.GameType.Dynamics.SEQUENTIAL,
     chance_mode=pyspiel.GameType.ChanceMode.EXPLICIT_STOCHASTIC,
     information=pyspiel.GameType.Information.IMPERFECT_INFORMATION,
